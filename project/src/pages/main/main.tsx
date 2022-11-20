@@ -1,4 +1,7 @@
+import {Helmet} from 'react-helmet-async';
 import CatalogFilmCard from '../../components/catalog-film-card/catalog-film-card';
+import Footer from '../../components/footer/footer';
+import Logo from '../../components/logo/logo';
 
 type MainProps = {
   film: {
@@ -11,6 +14,9 @@ type MainProps = {
 function Main({film}: MainProps): JSX.Element {
   return (
     <>
+      <Helmet>
+        <title>WTW</title>
+      </Helmet>
       <section className="film-card">
         <div className="film-card__bg">
           <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
@@ -19,13 +25,7 @@ function Main({film}: MainProps): JSX.Element {
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header film-card__head">
-          <div className="logo">
-            <a href="/" className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
+          <Logo/>
 
           <ul className="user-block">
             <li className="user-block__item">
@@ -122,19 +122,7 @@ function Main({film}: MainProps): JSX.Element {
           </div>
         </section>
 
-        <footer className="page-footer">
-          <div className="logo">
-            <a href="/" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2022 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <Footer/>
       </div>
     </>
   );
