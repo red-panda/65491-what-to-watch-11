@@ -2,7 +2,7 @@ import { Movies } from '../types/films';
 
 export const films: Movies = [
   {
-    name: 'A Star Is Born',
+    name: 'A Star Is Born ',
     posterImage: 'https://11.react.pages.academy/static/film/poster/A_Star_Is_Born.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/A_Star_Is_Born.jpg',
     backgroundImage: 'https://11.react.pages.academy/static/film/background/A_Star_is_Born.jpg',
@@ -23,8 +23,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Moonrise Kingdom',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Moonrise_Kingdom.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/moonrise-kingdom.jpg',
@@ -46,8 +45,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Legend',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Legend.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/legend.jpg',
@@ -69,8 +67,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Fantastic Beasts: The Crimes of Grindelwald',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Fantastic_Beasts.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/fantastic-beasts-the-crimes-of-grindelwald.jpg',
@@ -92,8 +89,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Midnight Special',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Midnight_Special.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/midnight-special.jpg',
@@ -115,8 +111,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Matrix',
     posterImage: 'https://11.react.pages.academy/static/film/poster/matrix.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/matrix.jpg',
@@ -138,8 +133,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bike.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Pulp Fiction',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Pulp_Fiction.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/pulp-fiction.jpg',
@@ -161,8 +155,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Shutter Island',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Shutter_Island.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/shutter-island.jpg',
@@ -184,8 +177,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bike.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Aviator',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Aviator.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/aviator.jpg',
@@ -207,8 +199,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Gangs of new york',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Gangs_of_New_York_Poster.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/gangs_of_new_york.jpg',
@@ -230,8 +221,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Bronson',
     posterImage: 'https://11.react.pages.academy/static/film/poster/bronson.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/bronson.jpg',
@@ -253,8 +243,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'War of the Worlds',
     posterImage: 'https://11.react.pages.academy/static/film/poster/War_of_the_Worlds.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/war-of-the-worlds.jpg',
@@ -276,8 +265,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'The Revenant',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Revenant.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/revenant.jpg',
@@ -299,8 +287,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Beach',
     posterImage: 'https://11.react.pages.academy/static/film/poster/beach.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/beach.jpg',
@@ -322,8 +309,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bike.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Orlando',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Orlando.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/orlando.jpg',
@@ -345,8 +331,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Snatch',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Snatch.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/snatch.jpg',
@@ -368,8 +353,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Bohemian Rhapsody',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Bohemian_Rhapsody.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/bohemian_rhapsody.jpg',
@@ -391,8 +375,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'What We Do in the Shadows',
     posterImage: 'https://11.react.pages.academy/static/film/poster/What-We-Do-in-the-Shadows.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/what-we-do-in-the-shadows.jpg',
@@ -414,8 +397,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'No Country for Old Men',
     posterImage: 'https://11.react.pages.academy/static/film/poster/No_Country_for_Old_Men.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/no-country-for-old-men.jpg',
@@ -437,8 +419,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Once Upon a Time in America',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Once_Upon_a_Time_in_America.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/Once_Upon_a_Time_in_America.jpg',
@@ -460,8 +441,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Seven Years in Tibet',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Seven_Years_in_Tibet.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/seven-years-in-tibet.jpg',
@@ -483,8 +463,7 @@ export const films: Movies = [
     isFavorite: false,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
-  },
-  {
+  }, {
     name: 'Macbeth',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Macbeth.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/macbeth.jpg',
@@ -506,8 +485,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'We need to talk about Kevin',
     posterImage: 'https://11.react.pages.academy/static/film/poster/We_need_to_talk_about_Kevin.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/we-need-to-talk-about-kevin.jpg',
@@ -529,8 +507,7 @@ export const films: Movies = [
     isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
-  },
-  {
+  }, {
     name: 'Dardjeeling Limited',
     posterImage: 'https://11.react.pages.academy/static/film/poster/Dardjeeling_Limited.jpg',
     previewImage: 'https://11.react.pages.academy/static/film/preview/dardjeeling_limited.jpg',

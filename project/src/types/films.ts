@@ -1,7 +1,7 @@
 export type Movie = {
-  id: number
+  id: number;
   name: string;
-  posterImage: string,
+  posterImage: string;
   previewImage: string;
   backgroundImage: string;
   backgroundColor: string;
@@ -12,7 +12,7 @@ export type Movie = {
   starring: string[];
   runTime: number;
   isFavorite: boolean;
-  previewVideoLink: string
+  previewVideoLink: string;
   genre: string;
   released: number;
   videoLink: string;

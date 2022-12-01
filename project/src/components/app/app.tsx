@@ -36,7 +36,9 @@ function App({films}: AppProps): JSX.Element {
           <Route path={AppRoute.MyList} element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
               <MyList films={films}/>
-            </PrivateRoute>}>
+            </PrivateRoute>
+          }
+          >
           </Route>
           <Route path={`${AppRoute.Player}/:id`} element={<Player films={films}/>}></Route>
           <Route path={AppRoute.Login} element={<SignIn/>}></Route>
