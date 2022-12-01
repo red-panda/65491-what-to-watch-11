@@ -1,6 +1,8 @@
 import {Helmet} from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
+import User from '../../components/user/user';
+import CatalogTitle from "../../components/catalog-title/catalog-title";
 
 function MyList(): JSX.Element {
   return (
@@ -12,20 +14,12 @@ function MyList(): JSX.Element {
         <Logo/>
 
         <h1 className="page-title user-page__title">My list <span className="user-page__film-count">9</span></h1>
-        <ul className="user-block">
-          <li className="user-block__item">
-            <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-            </div>
-          </li>
-          <li className="user-block__item">
-            <a href="/" className="user-block__link">Sign out</a>
-          </li>
-        </ul>
+
+        <User/>
       </header>
 
       <section className="catalog">
-        <h2 className="catalog__title visually-hidden">Catalog</h2>
+        <CatalogTitle/>
 
         <div className="catalog__films-list">
           <article className="small-film-card catalog__films-card">
