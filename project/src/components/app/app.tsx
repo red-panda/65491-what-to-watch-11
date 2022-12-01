@@ -26,14 +26,18 @@ function App({films}: AppProps): JSX.Element {
         <Routes>
           <Route index element={<Main films={films} mainFilm={mainFilm}/>}></Route>
           <Route path={`${AppRoute.Film}/:id`} element={<Film films={films}/>}></Route>
-          <Route path={`${AppRoute.Film}/:id/${AppRoute.AddReview}`} element={
+          <Route path={`${AppRoute.Film}/:id${AppRoute.AddReview}`} element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
               <AddReview films={films}/>
             </PrivateRoute>
           }
           >
           </Route>
-          <Route path={AppRoute.MyList} element={<PrivateRoute authorizationStatus={AuthorizationStatus.Auth}><MyList/></PrivateRoute>}></Route>
+          <Route path={AppRoute.MyList} element={
+            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+              <MyList films={films}/>
+            </PrivateRoute>}>
+          </Route>
           <Route path={`${AppRoute.Player}/:id`} element={<Player films={films}/>}></Route>
           <Route path={AppRoute.Login} element={<SignIn/>}></Route>
           <Route path='*' element={<NotFound/>}></Route>

@@ -89,7 +89,7 @@ export const films: Movies = [
     genre: 'Fantasy',
     released: 2018,
     id: 4,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
   },
@@ -181,7 +181,7 @@ export const films: Movies = [
     genre: 'Thriller',
     released: 2010,
     id: 8,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bike.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },
@@ -204,7 +204,7 @@ export const films: Movies = [
     genre: 'Drama',
     released: 2014,
     id: 9,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },
@@ -296,7 +296,7 @@ export const films: Movies = [
     genre: 'Action',
     released: 2015,
     id: 13,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },
@@ -388,7 +388,7 @@ export const films: Movies = [
     genre: 'Drama',
     released: 2018,
     id: 17,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/traffic.mp4'
   },
@@ -411,7 +411,7 @@ export const films: Movies = [
     genre: 'Comedy',
     released: 2019,
     id: 18,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },
@@ -503,7 +503,7 @@ export const films: Movies = [
     genre: 'Drama',
     released: 2015,
     id: 22,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/matrix.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },
@@ -526,7 +526,7 @@ export const films: Movies = [
     genre: 'Drama',
     released: 2011,
     id: 23,
-    isFavorite: false,
+    isFavorite: true,
     videoLink: 'https://11.react.pages.academy/static/film/video/bubbles.mp4',
     previewVideoLink: 'https://11.react.pages.academy/static/film/video/dog.mp4'
   },

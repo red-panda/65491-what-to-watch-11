@@ -34,7 +34,7 @@ function AddReview({films}: AddReviewProps): JSX.Element {
           <header className="page-header">
             <Logo/>
 
-            <Breadcrumbs/>
+            <Breadcrumbs filmId={currentFilm?.id} filmName={currentFilm?.name}/>
 
             <User/>
           </header>

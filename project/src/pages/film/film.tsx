@@ -52,7 +52,7 @@ function Film({films}: FilmProps): JSX.Element {
               <div className="film-card__buttons">
                 <BtnPlay filmId={currentFilm?.id}/>
                 <BtnMyList/>
-                <Link to={`${AppRoute.Film}/${routeId}/${AppRoute.AddReview}`} className="btn film-card__button">Add review</Link>
+                <Link to={`${AppRoute.Film}/${routeId}${AppRoute.AddReview}`} className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>
