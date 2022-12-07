@@ -12,12 +12,14 @@ import Player from '../../pages/player/player';
 import SignIn from '../../pages/sign-in/sign-in';
 import NotFound from '../../pages/not-found/not-found';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
+import {ReviewsList} from '../../types/reviews';
 
 type AppProps = {
   films: Movies;
+  reviewsList: ReviewsList;
 }
 
-function App({films}: AppProps): JSX.Element {
+function App({films, reviewsList}: AppProps): JSX.Element {
   const mainFilm = films[20];
   return (
     <HelmetProvider>
@@ -25,7 +27,7 @@ function App({films}: AppProps): JSX.Element {
         <ScrollToTop/>
         <Routes>
           <Route index element={<Main films={films} mainFilm={mainFilm}/>}></Route>
-          <Route path={`${AppRoute.Film}/:id`} element={<Film films={films}/>}></Route>
+          <Route path={`${AppRoute.Film}/:id`} element={<Film films={films} reviewsList={reviewsList}/>}></Route>
           <Route path={`${AppRoute.Film}/:id${AppRoute.AddReview}`} element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
               <AddReview films={films}/>
