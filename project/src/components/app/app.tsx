@@ -1,7 +1,7 @@
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AppRoute, AuthorizationStatus } from '../const';
-import { Movies } from '../../types/films';
+import {useAppSelector} from '../../hooks';
 
 import PrivateRoute from '../private-route/private-route';
 import Main from '../../pages/main/main';
@@ -11,42 +11,47 @@ import MyList from '../../pages/my-list/my-list';
 import Player from '../../pages/player/player';
 import SignIn from '../../pages/sign-in/sign-in';
 import NotFound from '../../pages/not-found/not-found';
+import Loader from '../../pages/loader/loader';
+import HistoryRouter from '../history-route/history-route';
+import browserHistory from '../../browser-history';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
-import {ReviewsList} from '../../types/reviews';
 
-type AppProps = {
-  films: Movies;
-  reviewsList: ReviewsList;
-}
+function App(): JSX.Element {
+  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
+  const isFilmsDataLoading = useAppSelector((state) => state.isFilmsDataLoading);
 
-function App({films, reviewsList}: AppProps): JSX.Element {
-  const mainFilm = films[20];
+  if (authorizationStatus === AuthorizationStatus.Unknown || isFilmsDataLoading) {
+    return (
+      <Loader />
+    );
+  }
+
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <HistoryRouter history={browserHistory}>
         <ScrollToTop/>
         <Routes>
-          <Route index element={<Main films={films} mainFilm={mainFilm}/>}></Route>
-          <Route path={`${AppRoute.Film}/:id`} element={<Film films={films} reviewsList={reviewsList}/>}></Route>
+          <Route index element={<Main/>}></Route>
+          <Route path={`${AppRoute.Film}/:id`} element={<Film/>}></Route>
           <Route path={`${AppRoute.Film}/:id${AppRoute.AddReview}`} element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <AddReview films={films}/>
+            <PrivateRoute authorizationStatus={authorizationStatus}>
+              <AddReview/>
             </PrivateRoute>
           }
           >
           </Route>
           <Route path={AppRoute.MyList} element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <MyList films={films}/>
+            <PrivateRoute authorizationStatus={authorizationStatus}>
+              <MyList/>
             </PrivateRoute>
           }
           >
           </Route>
-          <Route path={`${AppRoute.Player}/:id`} element={<Player films={films}/>}></Route>
+          <Route path={`${AppRoute.Player}/:id`} element={<Player/>}></Route>
           <Route path={AppRoute.Login} element={<SignIn/>}></Route>
           <Route path='*' element={<NotFound/>}></Route>
         </Routes>
-      </BrowserRouter>
+      </HistoryRouter>
     </HelmetProvider>
   );
 }

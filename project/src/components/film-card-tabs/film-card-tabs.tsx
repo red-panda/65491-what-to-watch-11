@@ -3,11 +3,10 @@ import {Movie} from '../../types/films';
 import TabOverview from '../tab-overview/tab-overview';
 import TabDetails from '../tab-details/tab-details';
 import TabReviews from '../tab-reviews/tab-reviews';
-import {ReviewsList} from '../../types/reviews';
+import {reviewsList} from '../../mocks/reviews';
 
 type FilmCardTabsProps = {
   film: Movie;
-  reviewsList: ReviewsList;
 };
 
 const tabs = {
@@ -16,7 +15,7 @@ const tabs = {
   reviews: 'reviews'
 };
 
-function FilmCardTabs({film, reviewsList}: FilmCardTabsProps): JSX.Element {
+function FilmCardTabs({film}: FilmCardTabsProps): JSX.Element {
   const [currentTab, setCurrentTab] = useState('overview');
 
   const toggleTab = () => {

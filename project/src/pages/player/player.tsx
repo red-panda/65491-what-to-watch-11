@@ -1,15 +1,12 @@
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
-import {Movies} from '../../types/films';
 import {Navigate, useParams} from 'react-router-dom';
 import {AppRoute} from '../../components/const';
+import {useAppSelector} from '../../hooks';
 
-type PlayerProps = {
-  films: Movies;
-};
-
-function Player({films}: PlayerProps): JSX.Element {
+function Player(): JSX.Element {
   const { id } = useParams();
+  const films = useAppSelector((state) => state.allFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
   const routeId = currentFilm ? currentFilm.id.toString() : '';
 
