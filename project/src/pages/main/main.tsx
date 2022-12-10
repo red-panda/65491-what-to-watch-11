@@ -12,6 +12,7 @@ import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import BtnPlay from '../../components/btn-play/btn-play';
 import BtnMyList from '../../components/btn-my-list/btn-my-list';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
+import {useAppSelector} from '../../hooks';
 
 type MainProps = {
   films: Movies;
@@ -19,6 +20,10 @@ type MainProps = {
 }
 
 function Main({films, mainFilm}: MainProps): JSX.Element {
+  const genres = ['All genres', ...new Set(films.map((el) => el.genre))];
+  const currentGenre = useAppSelector((state) => state.genre);
+  const sortedFilms = useAppSelector((state) => state.films);
+
   return (
     <>
       <Helmet>
@@ -59,9 +64,9 @@ function Main({films, mainFilm}: MainProps): JSX.Element {
         <section className="catalog">
           <CatalogTitle/>
 
-          <CatalogGenreList/>
+          <CatalogGenreList genres={genres} currentGenre={currentGenre}/>
 
-          <CatalogFilmList films={films}/>
+          <CatalogFilmList films={sortedFilms}/>
 
           <CatalogMore/>
         </section>
