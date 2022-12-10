@@ -1,14 +1,37 @@
+import {useAppSelector} from '../../hooks';
+import {AppRoute, AuthorizationStatus} from '../const';
+import {Link} from 'react-router-dom';
+import {store} from '../../store';
+import {logoutAction} from '../../store/api-actions';
+
 function User(): JSX.Element {
+  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
+  const loggedIn = () => authorizationStatus === AuthorizationStatus.Auth;
+  const user = useAppSelector((state) => state.user);
+
+  const handleLogout = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    store.dispatch(logoutAction());
+  };
+
   return (
     <ul className="user-block">
-      <li className="user-block__item">
-        <div className="user-block__avatar">
-          <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-        </div>
-      </li>
-      <li className="user-block__item">
-        <a href="/" className="user-block__link">Sign out</a>
-      </li>
+      {loggedIn() ? (
+        <>
+          <li className="user-block__item">
+            <div className="user-block__avatar">
+              <img src={user?.avatarUrl} alt={user?.name} width="63" height="63"/>
+            </div>
+          </li>
+          <li className="user-block__item">
+            <button onClick={handleLogout} className="user-block__link" style={{background: 'none', border: 'none'}}>Sign out</button>
+          </li>
+        </>
+      ) : (
+        <li className="user-block__item">
+          <Link to={AppRoute.Login} className="user-block__link">Sign in</Link>
+        </li>
+      )}
     </ul>
   );
 }
