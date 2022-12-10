@@ -8,19 +8,14 @@ import User from '../../components/user/user';
 import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import BtnPlay from '../../components/btn-play/btn-play';
 import BtnMyList from '../../components/btn-my-list/btn-my-list';
-import {Movies} from '../../types/films';
-import {ReviewsList} from '../../types/reviews';
 import {AppRoute} from '../../components/const';
 import FilmCardTabs from '../../components/film-card-tabs/film-card-tabs';
 import MoreLikeThis from '../../components/more-like-this/more-like-this';
+import {useAppSelector} from '../../hooks';
 
-type FilmProps = {
-  films: Movies;
-  reviewsList: ReviewsList;
-}
-
-function Film({films, reviewsList}: FilmProps): JSX.Element {
+function Film(): JSX.Element {
   const { id } = useParams();
+  const films = useAppSelector((state) => state.allFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
   const routeId = currentFilm ? currentFilm.id : '';
 
@@ -66,7 +61,7 @@ function Film({films, reviewsList}: FilmProps): JSX.Element {
               <div className="film-card__info">
                 <FilmCardPoster poster={currentFilm?.posterImage} sizeType={'big'}/>
 
-                <FilmCardTabs film={currentFilm} reviewsList={reviewsList}/>
+                <FilmCardTabs film={currentFilm}/>
               </div>
             </div>
           </section>

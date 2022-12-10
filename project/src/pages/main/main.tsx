@@ -1,5 +1,4 @@
 import {Helmet} from 'react-helmet-async';
-import {Movies, Movie} from '../../types/films';
 import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
 import CatalogFilmList from '../../components/catalog-film-list/catalog-film-list';
@@ -14,13 +13,10 @@ import BtnMyList from '../../components/btn-my-list/btn-my-list';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
 import {useAppSelector} from '../../hooks';
 
-type MainProps = {
-  films: Movies;
-  mainFilm: Movie;
-}
-
-function Main({films, mainFilm}: MainProps): JSX.Element {
-  const genres = ['All genres', ...new Set(films.map((el) => el.genre))];
+function Main(): JSX.Element {
+  const allFilms = useAppSelector((state) => state.allFilms);
+  const mainFilm = allFilms[20];
+  const genres = ['All genres', ...new Set(allFilms.map((el) => el.genre))];
   const currentGenre = useAppSelector((state) => state.genre);
   const sortedFilms = useAppSelector((state) => state.films);
 

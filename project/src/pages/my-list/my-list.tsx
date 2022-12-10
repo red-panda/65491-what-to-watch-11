@@ -4,13 +4,10 @@ import Logo from '../../components/logo/logo';
 import User from '../../components/user/user';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
 import CatalogFilmList from '../../components/catalog-film-list/catalog-film-list';
-import {Movies} from '../../types/films';
+import {useAppSelector} from '../../hooks';
 
-type MyListProps = {
-  films: Movies;
-}
-
-function MyList({films}: MyListProps): JSX.Element {
+function MyList(): JSX.Element {
+  const films = useAppSelector((state) => state.allFilms);
   const favFilms = films.filter((film) => film.isFavorite);
   return (
     <div className="user-page">
