@@ -1,13 +1,14 @@
 import {useAppSelector} from '../../hooks';
-import {AppRoute, AuthorizationStatus} from '../const';
+import {AppRoute, AuthorizationStatus} from '../../const';
 import {Link} from 'react-router-dom';
 import {store} from '../../store';
 import {logoutAction} from '../../store/api-actions';
+import {getAuthorizationStatus, getUser} from '../../store/user-process/selectors';
 
 function User(): JSX.Element {
-  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
   const loggedIn = () => authorizationStatus === AuthorizationStatus.Auth;
-  const user = useAppSelector((state) => state.user);
+  const user = useAppSelector(getUser);
 
   const handleLogout = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();

@@ -12,13 +12,14 @@ import BtnPlay from '../../components/btn-play/btn-play';
 import BtnMyList from '../../components/btn-my-list/btn-my-list';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
 import {useAppSelector} from '../../hooks';
+import {getAllFilms, getFilms, getGenre} from '../../store/films-data/selectors';
 
 function Main(): JSX.Element {
-  const allFilms = useAppSelector((state) => state.allFilms);
+  const allFilms = useAppSelector(getAllFilms);
   const mainFilm = allFilms[20];
   const genres = ['All genres', ...new Set(allFilms.map((el) => el.genre))];
-  const currentGenre = useAppSelector((state) => state.genre);
-  const sortedFilms = useAppSelector((state) => state.films);
+  const currentGenre = useAppSelector(getGenre);
+  const sortedFilms = useAppSelector(getFilms);
 
   return (
     <>

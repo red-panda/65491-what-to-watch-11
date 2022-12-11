@@ -1,8 +1,9 @@
-import {AuthorizationStatus} from '../const';
+import {AuthorizationStatus} from '../../const';
 import {useAppSelector} from '../../hooks';
+import {getAuthorizationStatus} from '../../store/user-process/selectors';
 
 function BtnMyList(): JSX.Element {
-  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
   const loggedIn = () => authorizationStatus === AuthorizationStatus.Auth;
   return (
     <div>

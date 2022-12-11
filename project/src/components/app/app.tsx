@@ -1,8 +1,9 @@
 import {Route, Routes} from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { AppRoute, AuthorizationStatus } from '../const';
+import {AppRoute} from '../../const';
 import {useAppSelector} from '../../hooks';
-
+import {getAuthorizationStatus, getAuthCheckedStatus} from '../../store/user-process/selectors';
+import {getFilmsDataLoadingStatus} from '../../store/films-data/selectors';
 import PrivateRoute from '../private-route/private-route';
 import Main from '../../pages/main/main';
 import AddReview from '../../pages/add-review/add-review';
@@ -17,10 +18,11 @@ import browserHistory from '../../browser-history';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 function App(): JSX.Element {
-  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
-  const isFilmsDataLoading = useAppSelector((state) => state.isFilmsDataLoading);
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
+  const isAuthChecked = useAppSelector(getAuthCheckedStatus);
+  const isFilmsDataLoading = useAppSelector(getFilmsDataLoadingStatus);
 
-  if (authorizationStatus === AuthorizationStatus.Unknown || isFilmsDataLoading) {
+  if (!isAuthChecked || isFilmsDataLoading) {
     return (
       <Loader />
     );

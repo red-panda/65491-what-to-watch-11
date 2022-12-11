@@ -8,14 +8,15 @@ import User from '../../components/user/user';
 import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import BtnPlay from '../../components/btn-play/btn-play';
 import BtnMyList from '../../components/btn-my-list/btn-my-list';
-import {AppRoute} from '../../components/const';
+import {AppRoute} from '../../const';
 import FilmCardTabs from '../../components/film-card-tabs/film-card-tabs';
 import MoreLikeThis from '../../components/more-like-this/more-like-this';
 import {useAppSelector} from '../../hooks';
+import {getAllFilms} from '../../store/films-data/selectors';
 
 function Film(): JSX.Element {
   const { id } = useParams();
-  const films = useAppSelector((state) => state.allFilms);
+  const films = useAppSelector(getAllFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
   const routeId = currentFilm ? currentFilm.id : '';
 

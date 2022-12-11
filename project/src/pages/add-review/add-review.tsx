@@ -8,10 +8,11 @@ import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
 import {Navigate, useParams} from 'react-router-dom';
 import {useAppSelector} from '../../hooks';
+import {getAllFilms} from '../../store/films-data/selectors';
 
 function AddReview(): JSX.Element {
   const { id } = useParams();
-  const films = useAppSelector((state) => state.allFilms);
+  const films = useAppSelector(getAllFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
 
   return (
