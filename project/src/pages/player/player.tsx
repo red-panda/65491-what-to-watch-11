@@ -3,11 +3,11 @@ import {Helmet} from 'react-helmet-async';
 import {Navigate, useParams} from 'react-router-dom';
 import {AppRoute} from '../../const';
 import {useAppSelector} from '../../hooks';
-import {getAllFilms} from '../../store/films-data/selectors';
+import {getFilms} from '../../store/films-data/selectors';
 
 function Player(): JSX.Element {
   const { id } = useParams();
-  const films = useAppSelector(getAllFilms);
+  const films = useAppSelector(getFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
   const routeId = currentFilm ? currentFilm.id.toString() : '';
 

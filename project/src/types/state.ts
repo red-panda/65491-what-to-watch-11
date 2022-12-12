@@ -1,13 +1,14 @@
 import {store} from '../store';
 import {AuthorizationStatus} from '../const';
-import {Movies} from './films';
+import {Movie, Movies} from './films';
 import {UserData} from './user-data';
 
 
 export type FilmsData = {
   genre: string;
-  allFilms: Movies;
   films: Movies;
+  sortedFilms: Movies;
+  mainFilm: Movie | null;
   isFilmsDataLoading: boolean;
 };
 

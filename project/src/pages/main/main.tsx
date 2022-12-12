@@ -1,61 +1,31 @@
 import {Helmet} from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
-import Logo from '../../components/logo/logo';
 import CatalogFilmList from '../../components/catalog-film-list/catalog-film-list';
 import CatalogGenreList from '../../components/catalog-genre-list/catalog-genre-list';
 import CatalogMore from '../../components/catalog-more/catalog-more';
-import FilmCardBg from '../../components/film-card-bg/film-card-bg';
-import HiddenTitle from '../../components/hidden-title/hidden-title';
-import User from '../../components/user/user';
-import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
-import BtnPlay from '../../components/btn-play/btn-play';
-import BtnMyList from '../../components/btn-my-list/btn-my-list';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
 import {useAppSelector} from '../../hooks';
-import {getAllFilms, getFilms, getGenre} from '../../store/films-data/selectors';
+import {getFilms, getGenre, getMainFilm, getSortedFilms} from '../../store/films-data/selectors';
+import {store} from '../../store';
+import {fetchFilmsAction, fetchMainFilmAction} from '../../store/api-actions';
+import MainFilmCard from '../../components/main-film-card/main-film-card';
+
+store.dispatch(fetchMainFilmAction());
+store.dispatch(fetchFilmsAction());
 
 function Main(): JSX.Element {
-  const allFilms = useAppSelector(getAllFilms);
-  const mainFilm = allFilms[20];
-  const genres = ['All genres', ...new Set(allFilms.map((el) => el.genre))];
+  const films = useAppSelector(getFilms);
+  const mainFilm = useAppSelector(getMainFilm);
+  const genres = ['All genres', ...new Set(films.map((el) => el.genre))];
   const currentGenre = useAppSelector(getGenre);
-  const sortedFilms = useAppSelector(getFilms);
+  const sortedFilms = useAppSelector(getSortedFilms);
 
   return (
     <>
       <Helmet>
         <title>WTW</title>
       </Helmet>
-      <section className="film-card">
-        <FilmCardBg background={mainFilm.backgroundImage}/>
-
-        <HiddenTitle/>
-
-        <header className="page-header film-card__head">
-          <Logo/>
-
-          <User/>
-        </header>
-
-        <div className="film-card__wrap">
-          <div className="film-card__info">
-            <FilmCardPoster poster={mainFilm.posterImage}/>
-
-            <div className="film-card__desc">
-              <h2 className="film-card__title">{mainFilm.name}</h2>
-              <p className="film-card__meta">
-                <span className="film-card__genre">{mainFilm.genre}</span>
-                <span className="film-card__year">{mainFilm.released}</span>
-              </p>
-
-              <div className="film-card__buttons">
-                <BtnPlay filmId={mainFilm.id}/>
-                <BtnMyList/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {mainFilm && <MainFilmCard film={mainFilm}/>}
 
       <div className="page-content">
         <section className="catalog">

@@ -5,10 +5,10 @@ import User from '../../components/user/user';
 import CatalogTitle from '../../components/catalog-title/catalog-title';
 import CatalogFilmList from '../../components/catalog-film-list/catalog-film-list';
 import {useAppSelector} from '../../hooks';
-import {getAllFilms} from '../../store/films-data/selectors';
+import {getFilms} from '../../store/films-data/selectors';
 
 function MyList(): JSX.Element {
-  const films = useAppSelector(getAllFilms);
+  const films = useAppSelector(getFilms);
   const favFilms = films.filter((film) => film.isFavorite);
   return (
     <div className="user-page">

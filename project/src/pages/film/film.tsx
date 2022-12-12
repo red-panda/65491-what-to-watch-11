@@ -12,11 +12,11 @@ import {AppRoute} from '../../const';
 import FilmCardTabs from '../../components/film-card-tabs/film-card-tabs';
 import MoreLikeThis from '../../components/more-like-this/more-like-this';
 import {useAppSelector} from '../../hooks';
-import {getAllFilms} from '../../store/films-data/selectors';
+import {getFilms} from '../../store/films-data/selectors';
 
 function Film(): JSX.Element {
   const { id } = useParams();
-  const films = useAppSelector(getAllFilms);
+  const films = useAppSelector(getFilms);
   const currentFilm = films.find((el) => el.id === Number(id));
   const routeId = currentFilm ? currentFilm.id : '';
 
