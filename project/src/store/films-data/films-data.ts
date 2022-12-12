@@ -19,8 +19,7 @@ export const filmsData = createSlice({
   extraReducers(builder) {
     builder
       .addCase(changeGenre, (state, action) => {
-        const {genre} = action.payload;
-        state.genre = genre;
+        state.genre = action.payload;
         state.sortedFilms = state.films.filter((el) => state.genre === initialState.genre ? state.films : el.genre === state.genre);
       })
       .addCase(fetchFilmsAction.pending, (state) => {
@@ -35,11 +34,11 @@ export const filmsData = createSlice({
         state.isFilmsDataLoading = false;
       })
       .addCase(fetchMainFilmAction.pending, (state) => {
-        // state.isFilmsDataLoading = true;
+        state.isFilmsDataLoading = true;
       })
       .addCase(fetchMainFilmAction.fulfilled, (state, action) => {
         state.mainFilm = action.payload;
-        // state.isFilmsDataLoading = false;
+        state.isFilmsDataLoading = false;
       });
   }
 });

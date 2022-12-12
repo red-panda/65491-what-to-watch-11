@@ -9,7 +9,7 @@ type CatalogGenreListProps = {
 function CatalogGenreList({genres, currentGenre}: CatalogGenreListProps): JSX.Element {
   const dispatch = useAppDispatch();
   const handleGenreClick = (genre: string) => {
-    dispatch(changeGenre({genre: genre}));
+    dispatch(changeGenre(genre));
   };
   return (
     <ul className="catalog__genres-list">
